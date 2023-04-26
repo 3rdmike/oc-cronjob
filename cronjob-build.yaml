@@ -7,7 +7,7 @@ spec:
   runPolicy: "Serial" 
   source: 
     git:
-      uri: "https://github.com/3rdmike/routercrontab.git"
+      uri: "https://github.com/3rdmike/oc-cronjob.git"
       ref: "demo"
   output: 
     to:

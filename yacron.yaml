@@ -1,0 +1,8 @@
+# define your cronjobs in this file
+# the format is very similar to a standard crontab but defined in yaml
+# format reference can be found at: https://github.com/gjcarneiro/yacron
+jobs:
+  - name: demo-job-01
+    command:  "/project/demo.sh"
+    shell: /bin/sh
+    schedule: "*/1 * * * *"

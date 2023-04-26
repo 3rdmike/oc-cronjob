@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: demo-cronjob-deployment
-  namespace: 1475a9-test
+  namespace: <YOUR NAMESPACE>
   labels:
     app: demo-cronjob
 spec:
@@ -17,10 +17,10 @@ spec:
     spec:
       containers:
       - name: demo-cronjob
-        image: image-registry.openshift-image-registry.svc:5000/1475a9-test/router-cronjob-test
+        image: image-registry.openshift-image-registry.svc:5000/<YOUR NAMESPACE>/<IMAGE STREAM NAME>
         env:
         - name: OC_TOKEN
           valueFrom:
             secretKeyRef:
-              name: pipeline-token-zcqq4
+              name: cronjob-secret
               key: token

@@ -1,17 +1,17 @@
-kind: "BuildConfig"
-apiVersion: "v1"
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
 metadata:
-  name: "demo-cronjob-build"
-  namespace: "1475a9-test"
+  name: demo-cronjob-build
+  namespace: <YOUR NAMESPACE>
 spec:
-  runPolicy: "Serial" 
   source: 
     git:
-      uri: "https://github.com/3rdmike/oc-cronjob.git"
-      ref: "demo"
+      uri: <YOUR GIT REPO URL e.g. "https://github.com/3rdmike/oc-cronjob.git">
+      ref: <YOUR BRANCH e.g. main>
+    type: Git
   output: 
     to:
       kind: ImageStreamTag
-      name: "demo-cronjob:latest"
+      name: <IMAGE STREAM NAME>
   strategy:
-   type: Docker
+    type: Docker

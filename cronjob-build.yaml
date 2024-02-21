@@ -1,17 +1,17 @@
 kind: "BuildConfig"
 apiVersion: "v1"
 metadata:
-  name: "demo-cronjob-build"
-  namespace: "1475a9-test"
+  name: "cronjob-build"
+  namespace: "988040-tools"
 spec:
   runPolicy: "Serial" 
   source: 
     git:
       uri: "https://github.com/3rdmike/oc-cronjob.git"
-      ref: "demo"
+      ref: "geocoder"
   output: 
     to:
       kind: ImageStreamTag
-      name: "demo-cronjob:latest"
+      name: "geocoder-cronjob:latest"
   strategy:
    type: Docker

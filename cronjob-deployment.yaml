@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-cronjob-deployment
-  namespace: 1475a9-test
+  name: cronjob-deployment
+  namespace: 988040-tools
   labels:
-    app: demo-cronjob
+    app: cronjob
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo-cronjob
+      app: cronjob
   template:
     metadata:
       labels:
-        app: demo-cronjob
+        app: cronjob
     spec:
       containers:
-      - name: demo-cronjob
-        image: image-registry.openshift-image-registry.svc:5000/1475a9-test/router-cronjob-test
+      - name: cronjob
+        image: image-registry.openshift-image-registry.svc:5000/988040-tools/geocoder-cronjob
         env:
         - name: OC_TOKEN
           valueFrom:
             secretKeyRef:
-              name: pipeline-token-zcqq4
+              name: pipeline-token-7mzbg
               key: token

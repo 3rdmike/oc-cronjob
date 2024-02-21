@@ -3,6 +3,6 @@
 # format reference can be found at: https://github.com/gjcarneiro/yacron
 jobs:
   - name: demo-job-01
-    command:  "/project/demo.sh"
+    command:  "/project/script.sh"
     shell: /bin/sh
     schedule: "*/1 * * * *"

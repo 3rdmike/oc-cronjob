@@ -5,7 +5,7 @@
 #
 # 1. install any dependencies for your services
 # 2. update the crontab file in the crontab.yaml file
-# 3. remember to create the work directory  and grant permissions for randon OC user
+# 3. remember to create the work directory  and grant permissions for random OC user
 
 FROM alpine:latest
 
@@ -40,8 +40,8 @@ RUN . yacronenv/bin/activate
 RUN pip install yacron
 
 # copy custom script (optional)
-COPY demo.sh .
-RUN chmod 777 demo.sh
+COPY script.sh .
+RUN chmod 777 script.sh
 
 # copy cronmtab file
 COPY yacron.yaml .
